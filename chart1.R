@@ -7,7 +7,11 @@ prison_pop <- read.csv("https://github.com/melaniewalsh/Neat-Datasets/blob/main/
 
 prision_pop_wa <- prison_pop %>% filter(state == "WA")
 
+
 prision_pop_wa <- prision_pop_wa %>% filter(county_name == "King County")
+prision_pop_wa <- prision_pop_wa %>% filter(year >= "2000" & year <= "2018")
+
+
 
 filtered_data <- prision_pop_wa %>% group_by(year, county_name)
 
@@ -20,7 +24,7 @@ chart1 <- ggplot(filtered_data, aes(year, colour=Race)) +
   geom_line(aes(y = other_race_prison_pop, color = "Other/Unknown")) +
   geom_line(aes(y = white_prison_pop, color = "White")) +
   scale_color_manual(values = c("Black", "Red", "Green", "Blue", "Purple", "Brown")) +
-  labs(title = "The Different Population Counts For Different Races in Prison Over The Years", y = "Count", x = "Year") +
+  labs(title = "The Different Population Counts For Different Races in King County Prison Over 2000 to 2018", y = "Count", x = "Year") +
   scale_x_continuous(breaks = seq(1970, 2018, by = 5))
 
   

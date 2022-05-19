@@ -1,4 +1,3 @@
-install.packages("usmap")
 library(usmap)
 library(ggplot2)
 library(dplyr)
