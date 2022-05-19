@@ -2,23 +2,10 @@ library(dplyr)
 library(ggplot2)
 library(plotly)
 
-
-# Shows trends over time for a variable of choice
-# More than 1 less than 10
-# Show how
-
-# aapi_prison_pop
-# black_prison_pop
-# latinx_prison_pop 1996 538
-# native_prison_pop
-# other_race_prison_pop
-# white_prison_pop
-
 prison_pop <- read.csv("https://github.com/melaniewalsh/Neat-Datasets/blob/main/us-prison-pop.csv?raw=true", stringsAsFactors = FALSE)
 
 
 prision_pop_wa <- prison_pop %>% filter(state == "WA")
-View(prision_pop_wa)
 
 prision_pop_wa <- prision_pop_wa %>% filter(county_name == "King County")
 

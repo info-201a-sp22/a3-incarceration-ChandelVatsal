@@ -22,32 +22,37 @@ Feel free to calculate and report values that you find relevant. Again, remember
 ### The Dataset
 
 Who collected the data?  
+- This data was collected by the Vera Institute of Justice 
+
 How was the data collected or generated?  
+- This data was assembled using data collected by the U.S Department of Juistice Bureau of Justice Statistics
+
 Why was the data collected?  
-How many observations (rows) are in your data?  
+- The data was collected to shine more light on the causes and consequences of who all are being sent to prison or jail. Making the data more revolved around county data makes studies more grounded and understandable.
+
+How many observations (rows) are in your data?
+- I primarily used 
+
 How many features (columns) are in the data?  
-What, if any, ethical questions or questions of power do you need to consider when working with this data?  
+-
+
+What, if any, ethical questions or questions of power do you need to consider when working with this data? - Some questions to consider when working with this data is that it can be considered sensitive information. Lots of individuals have been sent to prison/jail and it can be a huge thing in their lives which means analysis on this data should not be taken lightly.  
+
 What are possible limitations or problems with this data?   (at least 200 words)
+- One limitation or problem with this data set is that it does not contain much information about other gender identities. It contains male and female, but has no information on individuals who do not identify as those. This could make analysis on other genders and identities much harder. 
+- Another problem with this data set has to do with missing values. For example, in the `aapi_pop_15to64` there are about 153,811 rows. Out of those about 62,780 are missing. This means that about 41% of the data in this column are missing, which could make data analysis much more difficult. 
+- Another problem with this data set is that it does not contain clear information on age. It contains columns such as `total_pop_15to64` which tells us how many people are in between the ages of 15 and 64. However, it does not give us information on a specific age. It also does not give us a clear idea on the number of individuals who are older than 64 or younger than 15.
+- Another problem with this data set is that it does not contain information about what `other_race_prison_pop` means. The documentation talks about how it is other or unknown racial categories but that does not give much information to work on. This also heavily limits individuals because if they are not asian or pacific islander, black, latinx, native american, or white, then they have to be classified as 'other'
 
 
 ### Trends Over Time Chart
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
+Chart: 
 
-The first chart that you will create and include will show the trend over time of your variable/topic. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- Show more than one, but fewer than ~10 trends
-  - This may mean showing the same measure for different locations or different racial groups. Think carefully about a meaningful comparison of locations (e.g., the top 10 counties in a state, top 10 states, etc.)
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear legend title
-
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-``````{r, echo = FALSE, code = readLines("chart1_example.R")}
+```{r, message = FALSE, echo = FALSE, fig.height = 10, fig.width= 15, fig.align='center', code = readLines("chart1.R")}
 ```
+
+Description and Why: 
 
 ### Variable Comparison Chart
 
