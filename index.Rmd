@@ -8,15 +8,28 @@ output: html_document
 An introduction of the problem domain and a description of the variable(s) you are choosing to analyze (and why!)
 
 ### Summary Information
+```{r, message = FALSE, echo = FALSE, code = readLines("summary.R")}
 
-Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
+```
 
-These will likely be calculated using your DPLYR skills, answering questions such as: 
 
-- What is the average value of my variable across all the counties (in the current year)?
-- Where is my variable the highest / lowest?
-- How much has my variable change over the last N years?
 
+- The number of prison reports based on `urbanicity` that came in 2018 in the United States were `r count_pop_2018`
+  - Of that, `r sum_rural` were rural, `r sum_small_mid` were small/mid, `r sum_suburban` were suburban, and `r sum_urban` were urban 
+
+- Focusing specifically on Washington, the county that had the highest prison population was `r county_wa_highest_prison_pop`, and had `r wa_highest_prison_pop` individuals. 
+
+- In the United States, the county that had the highest prison population was `r county_highest_prison_pop`, with `r highest_prison_pop` individuals. 
+
+- Looking at the different races in between 2000 and 2016 in King County:
+  - Asian or Pacific Islander had a change of `r aapi_over_time`. This means that over time, the number of Asian or Pacific Islanders decreased. 
+  - Black had a change of `r black_over_time`. This means that over time, the number of Black indivudals decreased. 
+  - Latinx had a change of `r latinx_over_time`. This means that over time, the number of Latinx individuals decreased. 
+  - Native had a change of `r native_over_time`. This means that over time the number of Native individuals decreased. 
+  - Other races had a change of `r other_over_time`. This means that over time the number of Other race individuals increased. 
+  - White had a change of `r white_over_time`. This means that over time the number of White individuals decreased. 
+  
+  
 Feel free to calculate and report values that you find relevant. Again, remember that the purpose is to think about how these measure of incarceration vary by race.
 
 ### The Dataset
@@ -27,14 +40,12 @@ Who collected the data?
 
 How was the data collected or generated?  
 
-- This data was assembled using data collected by the U.S Department of Juistice Bureau of Justice Statistics
+- This data was assembled using data collected by the U.S Department of Justice Bureau of Justice Statistics
 
 Why was the data collected?  
 
 - The data was collected to shine more light on the causes and consequences of who all are being sent to prison or jail. Making the data more revolved around county data makes studies more grounded and understandable.
 
-```{r, child="summary.R", include=FALSE}
-```
 
 How many observations (rows) are in your data?
 
@@ -42,9 +53,11 @@ How many observations (rows) are in your data?
 
 How many features (columns) are in the data?  
 
-- I primarily used 
+- I primarily used the data on prison population per county/state which had `r cols_of_data` columns. 
 
-What, if any, ethical questions or questions of power do you need to consider when working with this data? - Some questions to consider when working with this data is that it can be considered sensitive information. Lots of individuals have been sent to prison/jail and it can be a huge thing in their lives which means analysis on this data should not be taken lightly.  
+What, if any, ethical questions or questions of power do you need to consider when working with this data?
+
+- Some questions to consider when working with this data is that it can be considered sensitive information. Lots of individuals have been sent to prison/jail and it can be a huge thing in their lives which means analysis on this data should not be taken lightly.  
 
 What are possible limitations or problems with this data?   (at least 200 words)
 
