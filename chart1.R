@@ -13,8 +13,9 @@ prison_pop <- read.csv(url_to_read, stringsAsFactors = FALSE)
 prision_pop_wa <- prison_pop %>% filter(state == "WA")
 
 
-prision_pop_wa <- prision_pop_wa %>% filter(county_name == "King County")
-prision_pop_wa <- prision_pop_wa %>% filter(year >= "2000" & year <= "2018")
+prision_pop_wa <- prision_pop_wa %>% filter((county_name == "King County") & (state == "WA")) 
+
+prision_pop_wa <- prision_pop_wa %>% filter(year >= "2000" & year <= "2016")
 
 
 
@@ -34,9 +35,9 @@ chart1 <- ggplot(filtered_data, aes(year, colour = Race)) +
   )) +
   labs(title = paste0(
     "The Different Population Counts For Different",
-    "Races in King County Prison Over 2000 to 2018"
+    "Races in King County Prison Over 2000 to 2016"
   ), y = "Count", x = "Year") +
-  scale_x_continuous(breaks = seq(1970, 2018, by = 5))
+  scale_x_continuous(breaks = seq(1970, 2016, by = 5))
 
 
 ggplotly(chart1)

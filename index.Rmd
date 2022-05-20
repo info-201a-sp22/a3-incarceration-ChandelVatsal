@@ -103,5 +103,5 @@ Description and Why:
 
 - This was included to show which counties have the highest number of prisoners in Washington. One pattern visable from the map is that King County and Pierce County have the highest population. This tends to make sense because they have some of the highest populations in Washington. 
 
-I
+
 
