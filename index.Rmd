@@ -29,14 +29,13 @@ An introduction of the problem domain and a description of the variable(s) you a
   - Other races had a change of `r other_over_time`. This means that over time the number of Other race individuals increased. 
   - White had a change of `r white_over_time`. This means that over time the number of White individuals decreased. 
   
-  
-Feel free to calculate and report values that you find relevant. Again, remember that the purpose is to think about how these measure of incarceration vary by race.
+
 
 ### The Dataset
 
 Who collected the data?  
 
-- This data was collected by the Vera Institute of Justice 
+- The set that I used was the data set about prison population per county/state. This data was collected by the Vera Institute of Justice 
 
 How was the data collected or generated?  
 
@@ -102,8 +101,7 @@ Description and Why:
 
 - This is a map of all of Washington's county in the year 2000 and how the prisons total populations compare.
 
-- This was included 
+- This was included to show which counties have the highest number of prisoners in Washington. One pattern visable from the map is that King County and Pierce County have the highest population. This tends to make sense because they have some of the highest populations in Washington. 
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
-
+I
 
