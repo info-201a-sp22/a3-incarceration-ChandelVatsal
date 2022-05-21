@@ -1,11 +1,16 @@
 ---
 title: "A3: Incarceration"
 output: html_document
+authors: Vatsal Chandel
 ---
 
 ### Introduction
 
-An introduction of the problem domain and a description of the variable(s) you are choosing to analyze (and why!)
+- This is an analysis report on incarcerated individuals. Specifically, it is data on prison population per county and state. 
+
+- Some of the variables that I focus on are the total populations in the counties (`total_pop`), the prison populations (`total_prison_pop`), the years (`year`), the different counties (`county_name`), states (`state`), genders and race.
+
+- I chose to look at these variables in particular because I wanted to see how the incarceration data compared between different genders and races and over time. I was also curious about the incarceration data looked in Washington. 
 
 ### Summary Information
 ```{r, message = FALSE, echo = FALSE, code = readLines("summary.R")}
@@ -13,13 +18,12 @@ An introduction of the problem domain and a description of the variable(s) you a
 ```
 
 
-
 - The number of prison reports based on `urbanicity` that came in 2018 in the United States were `r count_pop_2018`
   - Of that, `r sum_rural` were rural, `r sum_small_mid` were small/mid, `r sum_suburban` were suburban, and `r sum_urban` were urban 
 
-- Focusing specifically on Washington, the county that had the highest prison population was `r county_wa_highest_prison_pop`, and had `r wa_highest_prison_pop` individuals. 
+- Focusing specifically on Washington in 2000, the county that had the highest prison population was `r county_wa_highest_prison_pop`, and had `r wa_highest_prison_pop` individuals.
 
-- In the United States, the county that had the highest prison population was `r county_highest_prison_pop`, with `r highest_prison_pop` individuals. 
+- In the United States, the county that had the highest prison population was `r county_highest_prison_pop`, with `r highest_prison_pop` individuals in 2000. 
 
 - Looking at the different races in between 2000 and 2016 in King County:
   - Asian or Pacific Islander had a change of `r aapi_over_time`. This means that over time, the number of Asian or Pacific Islanders decreased. 
@@ -39,7 +43,7 @@ Who collected the data?
 
 How was the data collected or generated?  
 
-- This data was assembled using data collected by the U.S Department of Justice Bureau of Justice Statistics
+- This data was assembled using data collected by the U.S Department of Justice Bureau of Justice Statistics. It was also combined with other data set to fill in some of the empty spaces. 
 
 Why was the data collected?  
 
@@ -50,7 +54,7 @@ How many observations (rows) are in your data?
 
 - I primarily used the data on prison population per county/state which had `r rows_of_data` rows.  
 
-How many features (columns) are in the data?  
+How many features (columns) are in the data?
 
 - I primarily used the data on prison population per county/state which had `r cols_of_data` columns. 
 
@@ -63,32 +67,36 @@ What are possible limitations or problems with this data?   (at least 200 words)
 - One limitation or problem with this data set is that it does not contain much information about other gender identities. It contains male and female, but has no information on individuals who do not identify as those. This could make analysis on other genders and identities much harder. 
 - Another problem with this data set has to do with missing values. For example, in the `aapi_pop_15to64` there are about 153,811 rows. Out of those about 62,780 are missing. This means that about 41% of the data in this column are missing, which could make data analysis much more difficult. 
 - Another problem with this data set is that it does not contain clear information on age. It contains columns such as `total_pop_15to64` which tells us how many people are in between the ages of 15 and 64. However, it does not give us information on a specific age. It also does not give us a clear idea on the number of individuals who are older than 64 or younger than 15.
-- Another problem with this data set is that it does not contain information about what `other_race_prison_pop` means. The documentation talks about how it is other or unknown racial categories but that does not give much information to work on. This also heavily limits individuals because if they are not asian or pacific islander, black, latinx, native american, or white, then they have to be classified as 'other'
-
+- Another problem with this data set is that it does not contain information about what `other_race_prison_pop` means. The documentation talks about how it is other or unknown racial categories but that does not give much information to work on. This also heavily limits individuals because if they are not Asian or pacific islander, black, latinx, native american, or white, then they have to be classified as 'other'
+- Also looking at the data, it becomes clear that there is not much data on the 2018 and 2017 year. This makes most recent analysis difficult because the next best year is 2016 which is fairly old. 
 
 ### Trends Over Time Chart
 
 Chart: 
 
-```{r, message = FALSE, echo = FALSE, fig.height = 10, fig.width= 15, fig.align='center', code = readLines("chart1.R")}
+```{r, message = FALSE, echo = FALSE, fig.height = 5, fig.width= 10, fig.align='center', code = readLines("chart1.R")}
 ```
 
 Description and Why: 
 
-- This line graph shows how many of the different races (Asian or Pacific Islander, Black, Latinx, Native American, Other/Unknown, and White) in the data set went to Prison in King County from 2000 to 2018. I included this graph because it shows the difference in races and how their populations changed over time in that prison.
+- This line graph shows how many of the different races (Asian or Pacific Islander, Black, Latinx, Native American, Other/Unknown, and White) in the data set went to Prison in King County from 2000 to 2016. I chose this range because it contains the most complete data.
+- I included this graph because it shows the difference in races and how their populations changed over time in that prison.
 - One trend that shows up is that Black, Latinx, Native American, White, and Asian or Pacific Islander tend to decrease in population while Other/Unknown went up. 
 
 
 
 ### Variable Comparison Chart
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
+Chart: 
+```{r, message = FALSE, echo = FALSE, fig.height = 5, fig.width= 10, fig.align='center', code = readLines("chart2.r")}
+```
 
-The second chart that you will create and include will show how two different (continuous) variables are related to one another. Again, think carefully about what such a comparison means and what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
 
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- If you choose to add a color encoding (not required), you need a legend for your different color and a clear legend title
+Description and Why: 
+
+- This line graph compares the Male and Female populations in prison from 2000 to 2016 in King County. I chose this range because it contains the most complete data. 
+- I included this graph because it compares the different Male and Female population values. 
+- One trend that shows up is that the number of men in prison is much higher than women. It is also clear that the both populations are decreasing as time goes on. 
 
 ### Map
 
@@ -100,6 +108,8 @@ Chart:
 Description and Why: 
 
 - This is a map of all of Washington's county in the year 2000 and how the prisons total populations compare.
+
+- I chose the year 2000 because the data was complete and it was interesting to see data in this year. 
 
 - This was included to show which counties have the highest number of prisoners in Washington. One pattern visable from the map is that King County and Pierce County have the highest population. This tends to make sense because they have some of the highest populations in Washington. 
 

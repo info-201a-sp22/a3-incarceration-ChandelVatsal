@@ -13,7 +13,8 @@ prison_pop <- read.csv(url_to_read, stringsAsFactors = FALSE)
 prision_pop_wa <- prison_pop %>% filter(state == "WA")
 
 
-prision_pop_wa <- prision_pop_wa %>% filter((county_name == "King County") & (state == "WA")) 
+prision_pop_wa <- prision_pop_wa %>%
+  filter((county_name == "King County") & (state == "WA"))
 
 prision_pop_wa <- prision_pop_wa %>% filter(year >= "2000" & year <= "2016")
 
